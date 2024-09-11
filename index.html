@@ -94,7 +94,7 @@
     }
 
     .statement-box {
-      width: 100%;
+      width: 95%;
       min-height: 100px;
       background-color: white;
       border: 2px solid #ddd;
@@ -139,6 +139,11 @@
 
     }
 
+    #titleimg {
+        max-width: 200px;
+        margin-bottom: 3em;
+    }
+
   </style>
 </head>
 <body>
@@ -146,6 +151,8 @@
   <div class="container">
     <h1>Retro Against Humanity</h1>
     <h2>Statement Generator</h2>
+
+    <img id="titleimg" src="./retroagainsthumanity.png" /> 
 
     <div class="buttons">
       <button class="button-good" onclick="getCard('good')">😊 Good cards 😇</button>
@@ -157,7 +164,7 @@
 
     <button class="star-btn" onclick="getCard('star')">⭐️ STARS ⭐️</button>
     <div id="footer">
-        Project inpired on <a href="https://www.boxuk.com/insight/retros-against-humanity/">Box UK's work</a> and updated using GPT-4o. 
+        Really basic project inpired by <a href="https://www.boxuk.com/insight/retros-against-humanity/">Box UK's work</a>. 
         <br/><b>CC BY <a href="https://www.linkedin.com/in/cesarmiguel/">Cesar Miguel</a></b>
     </div>
   </div>

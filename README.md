@@ -7,9 +7,9 @@ This project is built using simple HTML, CSS, and JavaScript, allowing teams to 
 
 This activity is inspired by the work of [Box UK](https://www.boxuk.com/insight/retros-against-humanity/).
 
-## Demo
+## Usage
 
-[Link to your live demo](#)
+[Use it here!](https://cesarmiguel85.github.io/RetroAgainstHumanity/)
 
 ## Features
 
@@ -19,9 +19,4 @@ This activity is inspired by the work of [Box UK](https://www.boxuk.com/insight/
 - All functionality is handled client-side for fast performance.
 - No dependencies on external APIs or services.
 
-## Installation
-
-1. Clone the repository to your local machine:
-
-   ```bash
-   git clone https://github.com/yourusername/retro-against-humanity.git
+Come on, it cannot get any dumber than this! It is a single html page... 😅
