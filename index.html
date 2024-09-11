@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Against Humanity</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #333; /* Darker text for better contrast */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px #00e6e6; /* Cyan glow for contrast */
+      margin-bottom: 10px;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 10px #00e6e6, 0 0 20px #00e6e6, 0 0 30px #00e6e6;
+      }
+      to {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), 0 0 5px #00e6e6, 0 0 10px #00e6e6;
+      }
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #555; /* Softer gray for subtitle */
+      margin-bottom: 40px; /* Increased space below subtitle */
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .buttons button {
+      flex: 1;
+      margin: 0 10px;
+      padding: 30px;
+      font-size: 24px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .buttons button:hover {
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .button-good {
+      background-color: #4caf50; /* Green */
+      color: white;
+    }
+
+    .button-good:hover {
+      background-color: #388e3c;
+    }
+
+    .button-bad {
+      background-color: #f44336; /* Red */
+      color: white;
+    }
+
+    .button-bad:hover {
+      background-color: #d32f2f;
+    }
+
+    .button-improvement {
+      background-color: #3d3d3d; /* Darker yellow */
+      color: #fff;
+    }
+
+    .button-improvement:hover {
+      background-color: #7a7a7a;
+    }
+
+    .statement-box {
+      width: 100%;
+      min-height: 100px;
+      background-color: white;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 50px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      color: #333;
+    }
+
+    .star-btn {
+      padding: 30px;
+      font-size: 24px;
+      background-color: #2196f3; /* Blue */
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .star-btn:hover {
+      background-color: #1976d2;
+    }
+
+    @media (max-width: 768px) {
+      .buttons button, .star-btn {
+        font-size: 20px;
+        padding: 20px;
+      }
+    }
+
+    #footer {
+        margin-top:5em;
+        font-size: smaller;
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Retro Against Humanity</h1>
+    <h2>Statement Generator</h2>
+
+    <div class="buttons">
+      <button class="button-good" onclick="getCard('good')">😊 Good cards 😇</button>
+      <button class="button-bad" onclick="getCard('bad')">😤 Bad cards 😠</button>
+      <button class="button-improvement" onclick="getCard('improvement')">💪 Improvement cards 👍</button>
+    </div>
+
+    <div id="statement-box" class="statement-box">Click a button to get a card statement!</div>
+
+    <button class="star-btn" onclick="getCard('star')">⭐️ STARS ⭐️</button>
+    <div id="footer">
+        Project inpired on <a href="https://www.boxuk.com/insight/retros-against-humanity/">Box UK's work</a> and updated using GPT-4o. 
+        <br/><b>CC BY <a href="https://www.linkedin.com/in/cesarmiguel/">Cesar Miguel</a></b>
+    </div>
+  </div>
+
+  <script>
+    // Card statements in JavaScript
+    const cards = {
+      good: [
+        "We were into _____ before it was cool.",
+        "_____ was so good even Grumpy Cat smiled.",
+        "The Colonel’s secret spice contains _____.",
+        "I love the smell of _____ in the morning.",
+        "_____ is my chosen weapon in the zombie apocalypse.",
+        "The secret weapon in the war against bad sprints is _____.",
+        "_____ was all the things, to all the people.",
+        "I’ll tell you what I want, what I really really want: _____.",
+        "The secret to a good sprint they don’t want you to know about is _____.",
+        "More beautiful than a double rainbow; when _____ just works.",
+        "I want to shout it from the rooftops. I love _____.",
+        "When in doubt, blame _____.",
+        "Nothing beats _____ after a brutal stand-up meeting.",
+        "The best part of the sprint was definitely _____.",
+        "_____ is the reason our team hasn’t collapsed into chaos yet."
+      ],
+      bad: [
+        "_____ is the modern-day Betamax.",
+        "Ain’t nobody got time for _____.",
+        "The tenth circle of hell is made up of _____.",
+        "_____ keeps me up at night.",
+        "_____ is more offensive than the teeth of a Jeremy Kyle guest.",
+        "I wouldn’t wish _____ on my worst enemy.",
+        "Don’t feed gizmo after midnight or you may end up with _____.",
+        "_____ should be sent to bed without supper.",
+        "Drawing a perfect circle on an etch a sketch is easier than _____.",
+        "The only thing I regret is _____.",
+        "If only we’d known about _____ sooner."
+      ],
+      improvement: [
+        "_____ could save the world. Or it could kill us all.",
+        "I like to try new things, but is _____ really the answer?",
+        "_____ didn’t go exactly how I’d have liked. But it worked.",
+        "Box UK don’t currently _____, but if they did, they’d be the best in the world.",
+        "_____: what’s the worst that could happen?"
+      ],
+      star: [
+        "No one puts _____ in the corner.",
+        "Who you gonna call? _____!",
+        "_____ is a one man/woman army.",
+        "The name’s Bond. _____ Bond.",
+        "Even Chuck Norris bows down to _____."
+      ]
+    };
+
+    function getCard(type) {
+      const randomIndex = Math.floor(Math.random() * cards[type].length);
+      const randomStatement = cards[type][randomIndex];
+      document.getElementById('statement-box').innerText = randomStatement;
+    }
+  </script>
+
+</body>
+</html>
